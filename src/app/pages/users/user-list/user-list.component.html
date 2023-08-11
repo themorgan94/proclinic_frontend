@@ -1,0 +1,88 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Users" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-area-2 proclinic-box-shadow">
+                <h3 class="widget-title">Search Users</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="userName">Username</label>
+                            <input type="text" class="form-control" placeholder="Username" id="userName" name="userName" [(ngModel)]="userName">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="email" class="form-control" id="email" name="email"  [(ngModel)]="email">
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <button type="submit" class="btn btn-primary btn-lg" (click)="getUserData()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-area-2 proclinic-box-shadow">
+                <h3 class="widget-title">Result List</h3>                           
+                <div class="table-responsive mb-3">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th >ID</th>
+                                <th >Username</th>
+                                <th >Email</th>
+                                <th >Name</th>
+                                <th >-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of users; let i = index;" id="user_{{data.ID}}">
+                                <td class="fw-medium">{{ i + 1 }}</td>
+                                <td>{{ data.userName }}</td>
+                                <td>{{ data.email }}</td>
+                                <td>{{ data.person.firstName }} {{ data.person.lastName }}</td>
+                                <td>
+                                    <a [routerLink]="['/users/edit-user', data.ID]" class="btn btn-default btn-sm edit-item-btn">
+                                        Edit
+                                    </a>
+                                    <a class="ml-2 btn btn-primary btn-sm remove-item-btn" (click)="confirm(deleteModal, data.ID)">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /Widget Item -->
+    </div>
+</div>
+
+<!-- removeItemModal -->
+<ng-template #deleteModal let-modal>
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="mt-2 text-center">
+        <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+          <h4>You are about to delete a user ?</h4>
+          <p class="text-muted mx-4 mb-0">Deleting your user will remove all of your information from our database.
+          </p>
+        </div>
+      </div>
+      <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+        <button class="btn btn-default" data-bs-dismiss="modal"
+          id="deleteRecord-close" (click)="modal.close('Close click')"><i class="ti-close me-1 align-middle"></i>
+          Close</button>
+        <button type="button" class="btn btn-primary ml-2" id="delete-product" (click)="deleteData(deleteId)"
+          (click)="modal.close('Close click')">Yes, Delete It!</button>
+      </div>
+    </div>
+  </div><!-- /.modal-content -->
+</ng-template>

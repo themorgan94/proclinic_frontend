@@ -1,0 +1,89 @@
+<nav class="navbar navbar-default" (window:scroll)="windowScroll()">
+	<div class="container-fluid">
+		<div class="responsive-logo">
+			<a href="index.html"><img src="assets/images/logo-dark.png" class="logo" alt="logo"></a>
+		</div>
+		<ul class="nav">
+			<li class="nav-item" ngbDropdown>
+				<a href="javascript:void(0);" class="lang-nav-item" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+	                <img *ngIf="flagvalue !== undefined" src="{{flagvalue}}" alt="Header Language" height="20" class="rounded">
+	                <img *ngIf="flagvalue === undefined" src="{{valueset}}" alt="Header Language" height="20" class="rounded">
+				</a>
+				<div class="dropdown-menu proclinic-box-shadow2" ngbDropdownMenu>
+					<a 
+                        href="javascript:void(0);"
+                        class="dropdown-item notify-item language py-2"
+                        data-lang="eng"
+	                    *ngFor="let item of listLang" (click)="setLanguage(item.text, item.lang, item.flag)"
+	                    [ngClass]="{'active': cookieValue === item.lang}">
+	                        <img src="{{item.flag}}" alt="user-image" class="me-2 rounded" height="18">
+                            <span class="align-middle ml-2">{{item.text}}</span>
+	                </a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<span class="ti-menu" id="sidebarCollapse"></span>
+			</li>
+			<li class="nav-item">
+				<span title="Fullscreen" class="ti-fullscreen fullscreen" (click)="fullscreen()"></span>
+			</li>
+			<li class="nav-item">
+				<a  data-toggle="modal" data-target=".proclinic-modal-lg">
+					<span class="ti-search"></span>
+				</a>
+				<div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-lorvens">
+						<div class="modal-content proclinic-box-shadow2">
+							<div class="modal-header">
+								<h5 class="modal-title">Search Patient/Doctor:</h5>
+								<span class="ti-close" data-dismiss="modal" aria-label="Close">
+								</span>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<input type="text" class="form-control" id="search-term" placeholder="Type text here">
+										<button type="button" class="btn btn-lorvens proclinic-bg">
+											<span class="ti-location-arrow"></span> Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					<span class="ti-announcement"></span>
+				</a>
+				<div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+					<h5>Notifications</h5>
+					<a class="dropdown-item" href="#">
+						<span class="ti-wheelchair"></span> New Patient Added</a>
+					<a class="dropdown-item" href="#">
+						<span class="ti-money"></span> Patient payment done</a>
+					<a class="dropdown-item" href="#">
+						<span class="ti-time"></span>Patient Appointment booked</a>
+					<a class="dropdown-item" href="#">
+						<span class="ti-wheelchair"></span> New Patient Added</a>
+				</div>
+			</li>
+			<li class="nav-item" ngbDropdown id="page-header-user-dropdown">
+				<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+                    <span class='ti-user'></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                    <!-- item-->
+                    <h6 class="dropdown-header">{{ userData.firstName }} {{ userData.lastName }}</h6>
+                    <a class="dropdown-item" routerLink="/profile"><i
+                            class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle">Profile</span></a>
+                    <a class="dropdown-item" href="javascript: void(0);" (click)="logout()"><i
+                            class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                            class="align-middle" data-key="t-logout">Logout</span></a>
+                </div>
+			</li>
+		</ul>
+	
+	</div>
+</nav>

@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+  <div id="content">
+    <app-topbar (mobileMenuButtonClicked)="onToggleMobileMenu()"></app-topbar>
+    <router-outlet></router-outlet>
+  </div>
+  <!-- Back to Top -->
+	<a id="back-to-top" href="#" class="back-to-top" (click)="topFunction()">
+		<span class="ti-angle-up"></span>
+	</a>
+</div>

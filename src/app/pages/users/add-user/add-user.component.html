@@ -1,0 +1,61 @@
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Add User" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget-area-2 proclinic-box-shadow">
+        <h3 class="widget-title">Add User</h3>
+        <form (ngSubmit)="saveUser()" [formGroup]="userForm">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="form-label" for="userName">Username</label>
+              <input type="text" class="form-control" id="userName" placeholder="Enter username" required formControlName="userName" [ngClass]="{ 'is-invalid': submitted && form['userName'].errors }" />
+              <div *ngIf="submitted && form['userName'].errors" class="invalid-feedback" align="left">
+                  <div *ngIf="form['userName'].errors['required']">Username is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="form-label" for="email">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter email" required formControlName="email" [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" />
+              <div *ngIf="submitted && form['email'].errors" class="invalid-feedback" align="left">
+                  <div *ngIf="form['email'].errors['required']">Email is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="form-label" for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" required formControlName="password" [ngClass]="{ 'is-invalid': submitted && form['password'].errors }" />
+              <div *ngIf="submitted && form['password'].errors" class="invalid-feedback" align="left">
+                  <div *ngIf="form['password'].errors['required']">Password is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="form-label" for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && form['firstName'].errors }" />
+              <div *ngIf="submitted && form['firstName'].errors" class="invalid-feedback" align="left">
+                <div *ngIf="form['firstName'].errors['required']">First Name is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && form['lastName'].errors }" />
+              <div *ngIf="submitted && form['lastName'].errors" class="invalid-feedback" align="left">
+                <div *ngIf="form['lastName'].errors['required']">Last Name is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="DOB" class="form-label">Date of Birth</label>
+              <input class="form-control" type="date" formControlName="DOB" [ngClass]="{ 'is-invalid': submitted && form['DOB'].errors }">
+            </div>
+            <div class="form-group col-md-6 mb-3">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="loading">
+                Submit <span *ngIf="loading">...</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

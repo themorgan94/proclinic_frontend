@@ -1,0 +1,96 @@
+{
+  "HEADER": {
+    "MORE": {
+      "TEXT": "More"
+    }
+  },
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "MENU"
+    },
+    "DASHBOARD": {
+      "TEXT": "Dashboard"
+    },
+    "USERS": {
+      "TEXT": "Users",
+      "LIST": {
+        "ADD_USER": "Add User",
+        "SEARCH_USERS": "Search Users",
+        "USER_DETAILS": "User Details",
+        "EDIT_USER": "Edit User"
+      }
+    },
+    "PATIENTS": {
+      "TEXT": "Patients",
+      "LIST": {
+        "ADD_PATIENT": "Add Paitent",
+        "SEARCH_PATIENTS": "Search Paitents",
+        "PATIENT_DETAILS": "Paitent Details",
+        "EDIT_PATIENT": "Edit Paitent"
+      }
+    },
+    "DOCTORS": {
+      "TEXT": "Doctors",
+      "LIST": {
+        "ADD_DOCTOR": "Add Doctor",
+        "SEARCH_DOCTORS": "Search Doctors",
+        "DOCTOR_DETAILS": "Doctor Details",
+        "EDIT_DOCTOR": "Edit Doctor"
+      }
+    },
+    "APPOINTMENTS": {
+      "TEXT": "Appointments",
+      "LIST": {
+        "ADD_APPOINTMENT": "Add Appointment",
+        "SEARCH_APPOINTMENTS": "Search Appointments",
+        "APPOINTMENT_DETAILS": "Appointment Details",
+        "EDIT_APPOINTMENT": "Edit Appointment"
+      }
+    },
+    "PAYMENTS": {
+      "TEXT": "Payments",
+      "LIST": {
+        "ADD_PAYMENT": "Add Payment",
+        "SEARCH_PAYMENTS": "Search Payments",
+        "PAYMENT_DETAILS": "Payment Details",
+        "EDIT_PAYMENT": "Edit Payment"
+      }
+    },
+    "ROOM_ALLOTMENTS": {
+      "TEXT": "Room Allotments",
+      "LIST": {
+        "ADD_ROOM_ALLOTMENT": "Add Room Allotment",
+        "SEARCH_ROOM_ALLOTMENTS": "Search Room Allotments",
+        "ROOM_ALLOTMENT_DETAILS": "Room Allotment Details",
+        "EDIT_ROOM_ALLOTMENT": "Edit Room Allotment"
+      }
+    },
+    "MODULES": {
+      "TEXT": "Modules",
+      "LIST": {
+        "ADD_MODULE": "Add Module",
+        "SEARCH_MODULES": "Search Modules",
+        "MODULE_DETAILS": "Module Details",
+        "EDIT_MODULE": "Edit Module"
+      }
+    },
+    "FEATURES": {
+      "TEXT": "Features",
+      "LIST": {
+        "ADD_FEATURE": "Add Feature",
+        "SEARCH_FEATURES": "Search Features",
+        "FEATURE_DETAILS": "Feature Details",
+        "EDIT_FEATURE": "Edit Feature"
+      }
+    },
+    "TASKS": {
+      "TEXT": "Tasks",
+      "LIST": {
+        "ADD_TASK": "Add Task",
+        "SEARCH_TASKS": "Search Tasks",
+        "TASK_DETAILS": "Task Details",
+        "EDIT_TASK": "Edit Task"
+      }
+    }
+  }
+}

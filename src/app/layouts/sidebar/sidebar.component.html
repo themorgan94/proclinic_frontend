@@ -1,0 +1,27 @@
+<nav id="sidebar" class="proclinic-bg">
+	<div class="sidebar-header">
+		<a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo"></a>
+	</div>
+	<ul class="list-unstyled components">
+		<ng-container *ngFor="let item of menuItems">
+			<li>
+				<a href="javascript:void(0);" data-toggle="collapse" aria-expanded="false" (click)="toggleItem($event)">
+					<span class="{{ item.icon }}"></span> {{ item.label | translate }}
+				</a>
+				<ul class="collapse list-unstyled" *ngIf="hasItems(item)">
+					<li *ngFor="let subitem of item.subItems">
+						<a [routerLink]="subitem.link">{{ subitem.label | translate}}</a>
+					</li>
+				</ul>
+			</li>
+		</ng-container>
+	</ul>
+	<div class="nav-help animated fadeIn">
+		<h5><span class="ti-comments"></span> Need Help</h5>
+		<h6>
+			<span class="ti-mobile"></span> +1 1234 567 890</h6>
+		<h6>
+			<span class="ti-email"></span> email@site.com</h6>
+		<p class="copyright-text">Copy rights &copy; 2018</p>
+	</div>
+</nav>

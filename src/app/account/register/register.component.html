@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center mt-sm-5 mb-4">
+                <div>
+                    <a href="" class="d-inline-block auth-logo">
+                        <img src="assets/images/logo-dark.png" alt="" height="60">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="card mt-4">
+                <div class="card-body p-4">
+                    <div class="text-center mt-2">
+                        <h3 class="text-danger">Create New Account</h3>
+                    </div>
+                    <div class="p-2 mt-4">
+                        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+                            <div class="mb-3">
+                                <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                <div class="invalid-feedback">
+                                    Please enter email
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" required formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }">
+                                <div class="invalid-feedback">
+                                    Please enter username
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="userpassword" class="form-label">Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password" required formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                <div class="invalid-feedback">
+                                    Please enter password
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
+                                <div class="invalid-feedback">
+                                    Please enter first name
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
+                                <div class="invalid-feedback">
+                                    Please enter last name
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                              <button type="submit" class="btn btn-primary btn-block" [disabled]="loading">
+                                Sign Up <span *ngIf="loading">...</span> 
+                              </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!-- end card body -->
+            </div>
+            <!-- end card -->
+
+            <div class="mt-4 text-center">
+                <p class="mb-0">Already have an account ? <a routerLink="/auth/login" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- end row -->
+</div>
